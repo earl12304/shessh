@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Basics - Learning Hub</title>
+    <link rel="stylesheet" href="jav.css">
+</head>
+<body>
+  
+    <!-- Navigation Bar -->
+    <header>
+<h2><span class="blue">Learning</span><span class="orange">Hub</span></h2>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="course.html" class="active">Courses</a></li>
+                <li><a href="resources.html ">Resources</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">☰</div>
+        </nav>
+    </header>
+    
+      <div class="back-button">
+      <a href="course.html"><i class="fas fa-arrow-left"></i> Back</a>
+    </div>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search lessons..." onkeyup="searchLessons()">
+    </div>
+ 
+    <!-- Lesson Sections -->
+    <main id="lessons">
+        <section id="getting-started-with-java" class="lesson">
+    <h2>Getting Started with Java</h2>
+
+    <p>Java is a powerful, object-oriented programming language used for building applications, from desktop software to web applications and mobile apps.</p>
+
+    <h3>Why Learn Java?</h3>
+    <p>Java is popular due to its platform independence (Write Once, Run Anywhere), strong community support, and versatility.</p>
+
+    <h3>Installing Java</h3>
+    <p>To start coding in Java, you need to install the Java Development Kit (JDK).</p>
+    <h4>Steps to Install Java:</h4>
+    <ol>
+        <li>Download the JDK from the official <a href="https://www.oracle.com/java/technologies/javase-downloads.html">Oracle website</a> or use OpenJDK.</li>
+        <li>Install the JDK and set up the environment variables.</li>
+        <li>Verify the installation by running the command:</li>
+    </ol>
+    <pre><code>java -version</code></pre>
+
+    <h3>Writing Your First Java Program</h3>
+    <p>Let's write a simple Java program to print "Hello, World!".</p>
+
+    <h4>Example: Hello World Program</h4>
+    <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+
+    <h3>Compiling and Running Java Code</h3>
+    <p>After writing the code, follow these steps to run it:</p>
+    <ol>
+        <li>Save the file as <code>HelloWorld.java</code>.</li>
+        <li>Open a terminal or command prompt and navigate to the file's directory.</li>
+        <li>Compile the Java program using:</li>
+    </ol>
+    <pre><code>javac HelloWorld.java</code></pre>
+    <ol start="4">
+        <li>Run the compiled program with:</li>
+    </ol>
+    <pre><code>java HelloWorld</code></pre>
+
+    <h3>Understanding the Code</h3>
+    <p>Breaking down the "Hello, World!" program:</p>
+    <ul>
+        <li><code>public class HelloWorld</code> - Defines a class named <code>HelloWorld</code>.</li>
+        <li><code>public static void main(String[] args)</code> - The main method where execution starts.</li>
+        <li><code>System.out.println("Hello, World!");</code> - Prints text to the console.</li>
+    </ul>
+
+    <p>Now that you've written your first Java program, you're ready to explore more about Java syntax and concepts!</p>
+</section>
+
+        <section id="multiple-statements" class="lesson">
+    <h2>Using Multiple Statements in Java</h2>
+
+    <p>In Java, a program consists of multiple statements that are executed sequentially. Each statement performs a specific task, such as declaring variables, performing calculations, or displaying output.</p>
+
+    <h3>Writing Multiple Statements</h3>
+    <p>Each statement in Java must end with a semicolon <code>;</code>. Multiple statements are executed in order from top to bottom.</p>
+
+    <h4>Example: Multiple Print Statements</h4>
+    <pre><code>public class MultipleStatements {
+    public static void main(String[] args) {
+        System.out.println("This is the first statement.");
+        System.out.println("This is the second statement.");
+        System.out.println("This is the third statement.");
+    }
+}</code></pre>
+
+    <h3>Using Variables in Multiple Statements</h3>
+    <p>We can store values in variables and use them in multiple statements.</p>
+
+    <h4>Example: Declaring and Using Variables</h4>
+    <pre><code>public class VariableExample {
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 20;
+        int sum = num1 + num2;
+
+        System.out.println("First number: " + num1);
+        System.out.println("Second number: " + num2);
+        System.out.println("Sum: " + sum);
+    }
+}</code></pre>
+
+    <h3>Grouping Statements with Blocks</h3>
+    <p>Multiple statements can be grouped using curly braces <code>{}</code>. This is useful in loops, conditionals, and methods.</p>
+
+    <h4>Example: Grouping Statements in a Block</h4>
+    <pre><code>public class BlockExample {
+    public static void main(String[] args) {
+        int number = 15;
+
+        if (number > 10) {
+            System.out.println("The number is greater than 10.");
+            System.out.println("Performing additional calculations...");
+        }
+
+        System.out.println("End of program.");
+    }
+}</code></pre>
+
+    <h3>Executing Statements Sequentially</h3>
+    <p>Java executes statements in the order they are written, unless flow control statements (like loops or conditionals) change the execution order.</p>
+
+    <h4>Example: Sequential Execution</h4>
+    <pre><code>public class SequentialExecution {
+    public static void main(String[] args) {
+        System.out.println("Step 1: Initializing variables.");
+        int a = 5, b = 10;
+
+        System.out.println("Step 2: Performing addition.");
+        int sum = a + b;
+
+        System.out.println("Step 3: Displaying result.");
+        System.out.println("Sum: " + sum);
+    }
+}</code></pre>
+
+    <p>Understanding how multiple statements work is essential in structuring your Java programs efficiently. In the next lesson, we will explore Java syntax in more depth!</p>
+</section>
+
+        <section id="program-structure" class="lesson">
+    <h2>Understanding Java Program Structure</h2>
+
+    <p>Every Java program follows a specific structure that includes packages, classes, methods, and statements. Understanding this structure is key to writing clean and efficient code.</p>
+
+    <h3>Basic Structure of a Java Program</h3>
+    <p>A simple Java program consists of a class, a <code>main</code> method, and executable statements.</p>
+
+    <h4>Example: Basic Java Program Structure</h4>
+    <pre><code>public class ProgramStructure {
+    public static void main(String[] args) {
+        System.out.println("Understanding Java program structure!");
+    }
+}</code></pre>
+
+    <h3>Components of a Java Program</h3>
+    <p>Let's break down the key components:</p>
+    <ul>
+        <li><code>public class ProgramStructure</code> - Defines a class named <code>ProgramStructure</code>. The filename should match the class name.</li>
+        <li><code>public static void main(String[] args)</code> - The main method where execution begins.</li>
+        <li><code>System.out.println()</code> - A statement that prints text to the console.</li>
+    </ul>
+
+    <h3>Classes and Methods</h3>
+    <p>Java programs are built using classes and methods. A class is a blueprint for creating objects, while methods define behaviors.</p>
+
+    <h4>Example: Class with a Method</h4>
+    <pre><code>public class Greeting {
+    // Method to print a greeting message
+    public static void sayHello() {
+        System.out.println("Hello, welcome to Java!");
+    }
+
+    public static void main(String[] args) {
+        sayHello(); // Calling the method
+    }
+}</code></pre>
+
+    <h3>Using Comments in Java</h3>
+    <p>Comments help explain the code and are ignored by the compiler.</p>
+    <h4>Types of Comments</h4>
+    <ul>
+        <li><code>// Single-line comment</code></li>
+        <li><code>/* Multi-line comment */</code></li>
+    </ul>
+
+    <h4>Example: Using Comments</h4>
+    <pre><code>public class CommentsExample {
+    public static void main(String[] args) {
+        // This is a single-line comment
+        System.out.println("Java comments help explain code!");
+
+        /* This is a 
+           multi-line comment */
+        System.out.println("Comments improve code readability.");
+    }
+}</code></pre>
+
+    <h3>Organizing Java Code with Packages</h3>
+    <p>Packages group related classes together to improve code organization.</p>
+
+    <h4>Example: Using a Package</h4>
+    <pre><code>package mypackage;
+
+public class MyClass {
+    public static void main(String[] args) {
+        System.out.println("This class belongs to the 'mypackage' package.");
+    }
+}</code></pre>
+
+    <p>Understanding the structure of a Java program will help you write clean, organized, and maintainable code. In the next lesson, we'll dive into Java variables and data types!</p>
+</section>
+
+        <section id="variables" class="lesson">
+    <h2>Understanding Variables in Java</h2>
+
+    <p>Variables are used to store data in a Java program. Each variable has a type, a name, and a value.</p>
+
+    <h3>Declaring and Initializing Variables</h3>
+    <p>In Java, you declare a variable by specifying its type and name. You can also assign a value at the time of declaration.</p>
+
+    <h4>Example: Declaring and Initializing Variables</h4>
+    <pre><code>public class VariablesExample {
+    public static void main(String[] args) {
+        int age = 25; // Integer variable
+        double price = 19.99; // Floating-point variable
+        char grade = 'A'; // Character variable
+        boolean isJavaFun = true; // Boolean variable
+
+        System.out.println("Age: " + age);
+        System.out.println("Price: $" + price);
+        System.out.println("Grade: " + grade);
+        System.out.println("Is Java fun? " + isJavaFun);
+    }
+}</code></pre>
+
+    <h3>Types of Variables in Java</h3>
+    <p>Java has different types of variables based on scope and usage:</p>
+    <ul>
+        <li><strong>Local Variables</strong> – Declared inside a method or block and accessible only within that block.</li>
+        <li><strong>Instance Variables</strong> – Declared inside a class but outside methods, associated with an instance of the class.</li>
+        <li><strong>Static Variables</strong> – Declared using the <code>static</code> keyword, shared by all instances of the class.</li>
+    </ul>
+
+    <h4>Example: Local, Instance, and Static Variables</h4>
+    <pre><code>public class VariableTypes {
+    int instanceVar = 10; // Instance variable
+    static String staticVar = "I am static"; // Static variable
+
+    public void show() {
+        int localVar = 5; // Local variable
+        System.out.println("Local Variable: " + localVar);
+    }
+
+    public static void main(String[] args) {
+        VariableTypes obj = new VariableTypes();
+        obj.show();
+        System.out.println("Instance Variable: " + obj.instanceVar);
+        System.out.println("Static Variable: " + staticVar);
+    }
+}</code></pre>
+
+    <h3>Variable Naming Rules</h3>
+    <p>When naming variables in Java, follow these rules:</p>
+    <ul>
+        <li>Must begin with a letter, <code>$</code>, or <code>_</code> (cannot start with a number).</li>
+        <li>Case-sensitive (<code>Age</code> and <code>age</code> are different).</li>
+        <li>Cannot use Java reserved keywords.</li>
+    </ul>
+
+    <h3>Type Inference with <code>var</code></h3>
+    <p>Since Java 10, you can use <code>var</code> to let the compiler infer the type.</p>
+
+    <h4>Example: Using <code>var</code></h4>
+    <pre><code>public class VarExample {
+    public static void main(String[] args) {
+        var number = 42; // Compiler infers it as int
+        var text = "Hello Java"; // Compiler infers it as String
+
+        System.out.println("Number: " + number);
+        System.out.println("Text: " + text);
+    }
+}</code></pre>
+
+    <p>Understanding variables is essential for managing data in Java programs. In the next lesson, we'll explore data types in more detail!</p>
+</section>
+
+        <section id="doing-math" class="lesson">
+    <h2>Performing Math Operations in Java</h2>
+
+    <p>Java provides various arithmetic operators for performing mathematical calculations such as addition, subtraction, multiplication, and division.</p>
+
+    <h3>Basic Arithmetic Operations</h3>
+    <p>Java supports the following arithmetic operators:</p>
+    <ul>
+        <li><code>+</code> (Addition)</li>
+        <li><code>-</code> (Subtraction)</li>
+        <li><code>*</code> (Multiplication)</li>
+        <li><code>/</code> (Division)</li>
+        <li><code>%</code> (Modulus - Remainder)</li>
+    </ul>
+
+    <h4>Example: Basic Math Operations</h4>
+    <pre><code>public class MathOperations {
+    public static void main(String[] args) {
+        int a = 10, b = 5;
+
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b));
+        System.out.println("Modulus: " + (a % b));
+    }
+}</code></pre>
+
+    <h3>Using the Math Class</h3>
+    <p>Java's <code>Math</code> class provides methods for advanced mathematical calculations.</p>
+
+    <h4>Example: Using the Math Class</h4>
+    <pre><code>public class MathExample {
+    public static void main(String[] args) {
+        double x = 9.0;
+
+        System.out.println("Square Root: " + Math.sqrt(x));
+        System.out.println("Power: " + Math.pow(2, 3)); // 2^3
+        System.out.println("Absolute Value: " + Math.abs(-10));
+        System.out.println("Maximum: " + Math.max(10, 20));
+        System.out.println("Minimum: " + Math.min(10, 20));
+    }
+}</code></pre>
+
+    <h3>Increment and Decrement Operators</h3>
+    <p>Java provides operators to increase or decrease a variable’s value:</p>
+    <ul>
+        <li><code>++</code> (Increment by 1)</li>
+        <li><code>--</code> (Decrement by 1)</li>
+    </ul>
+
+    <h4>Example: Increment and Decrement</h4>
+    <pre><code>public class IncrementDecrement {
+    public static void main(String[] args) {
+        int number = 5;
+
+        number++; // Same as number = number + 1
+        System.out.println("After Increment: " + number);
+
+        number--; // Same as number = number - 1
+        System.out.println("After Decrement: " + number);
+    }
+}</code></pre>
+
+    <h3>Generating Random Numbers</h3>
+    <p>The <code>Math.random()</code> method generates a random number between 0.0 and 1.0.</p>
+
+    <h4>Example: Generating Random Numbers</h4>
+    <pre><code>public class RandomNumberExample {
+    public static void main(String[] args) {
+        double randomNum = Math.random(); // Between 0.0 and 1.0
+        int randomInt = (int) (Math.random() * 100); // Between 0 and 99
+
+        System.out.println("Random Double: " + randomNum);
+        System.out.println("Random Integer (0-99): " + randomInt);
+    }
+}</code></pre>
+
+    <p>Understanding math operations in Java helps in calculations, logic building, and problem-solving. In the next lesson, we'll explore conditional statements!</p>
+</section>
+
+        <section id="taking-user-input" class="lesson">
+    <h2>Taking User Input in Java</h2>
+
+    <p>Java allows users to enter data using the <code>Scanner</code> class, which is part of the <code>java.util</code> package. This is useful for interactive programs.</p>
+
+    <h3>Using the Scanner Class</h3>
+    <p>The <code>Scanner</code> class is used to take different types of user input, such as strings, integers, and floating-point numbers.</p>
+
+    <h4>Example: Taking User Input</h4>
+    <pre><code>import java.util.Scanner; // Import Scanner class
+
+public class UserInputExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // Create Scanner object
+
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine(); // Read a string
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt(); // Read an integer
+
+        System.out.print("Enter your height (in meters): ");
+        double height = scanner.nextDouble(); // Read a decimal number
+
+        System.out.println("Hello, " + name + "! You are " + age + " years old and " + height + "m tall.");
+
+        scanner.close(); // Close scanner to prevent resource leak
+    }
+}</code></pre>
+
+    <h3>Scanner Methods for Different Data Types</h3>
+    <p>The <code>Scanner</code> class provides different methods to read various data types:</p>
+    <ul>
+        <li><code>nextLine()</code> - Reads an entire line (string).</li>
+        <li><code>next()</code> - Reads a single word (string).</li>
+        <li><code>nextInt()</code> - Reads an integer.</li>
+        <li><code>nextDouble()</code> - Reads a floating-point number.</li>
+        <li><code>nextBoolean()</code> - Reads a boolean value (true/false).</li>
+    </ul>
+
+    <h4>Example: Reading Different Data Types</h4>
+    <pre><code>import java.util.Scanner;
+
+public class MultipleInputs {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a boolean value (true/false): ");
+        boolean isJavaFun = scanner.nextBoolean();
+
+        System.out.println("You entered: " + isJavaFun);
+
+        scanner.close();
+    }
+}</code></pre>
+
+    <h3>Handling User Input Errors</h3>
+    <p>If the user enters an incorrect data type, an error (exception) may occur. We can prevent this using input validation.</p>
+
+    <h4>Example: Handling Incorrect Input</h4>
+    <pre><code>import java.util.Scanner;
+
+public class InputValidation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+
+        if (scanner.hasNextInt()) {
+            int number = scanner.nextInt();
+            System.out.println("You entered: " + number);
+        } else {
+            System.out.println("Invalid input! Please enter an integer.");
+        }
+
+        scanner.close();
+    }
+}</code></pre>
+
+    <p>Taking user input makes programs more interactive and dynamic. In the next lesson, we'll explore conditional statements!</p>
+</section>
+
+        <section id="conditionals" class="lesson">
+    <h2>Using Conditional Statements in Java</h2>
+
+    <p>Conditional statements allow Java programs to make decisions based on specific conditions. The most commonly used conditional statements are <code>if</code>, <code>else if</code>, <code>else</code>, and <code>switch</code>.</p>
+
+    <h3>The if Statement</h3>
+    <p>The <code>if</code> statement executes a block of code only if a specified condition is true.</p>
+
+    <h4>Example: Simple if Statement</h4>
+    <pre><code>public class IfExample {
+    public static void main(String[] args) {
+        int number = 10;
+
+        if (number > 0) {
+            System.out.println("The number is positive.");
+        }
+    }
+}</code></pre>
+
+    <h3>The if-else Statement</h3>
+    <p>The <code>if-else</code> statement executes one block of code if the condition is true and another block if the condition is false.</p>
+
+    <h4>Example: if-else Statement</h4>
+    <pre><code>public class IfElseExample {
+    public static void main(String[] args) {
+        int number = -5;
+
+        if (number > 0) {
+            System.out.println("The number is positive.");
+        } else {
+            System.out.println("The number is negative or zero.");
+        }
+    }
+}</code></pre>
+
+    <h3>The if-else if-else Statement</h3>
+    <p>The <code>if-else if-else</code> statement checks multiple conditions sequentially.</p>
+
+    <h4>Example: if-else if-else Statement</h4>
+    <pre><code>public class ElseIfExample {
+    public static void main(String[] args) {
+        int score = 85;
+
+        if (score >= 90) {
+            System.out.println("Grade: A");
+        } else if (score >= 80) {
+            System.out.println("Grade: B");
+        } else if (score >= 70) {
+            System.out.println("Grade: C");
+        } else {
+            System.out.println("Grade: F");
+        }
+    }
+}</code></pre>
+
+    <h3>The switch Statement</h3>
+    <p>The <code>switch</code> statement is useful when multiple conditions are based on the same variable.</p>
+
+    <h4>Example: switch Statement</h4>
+    <pre><code>public class SwitchExample {
+    public static void main(String[] args) {
+        int day = 3;
+
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            default:
+                System.out.println("Weekend");
+        }
+    }
+}</code></pre>
+
+    <h3>Using the Ternary Operator</h3>
+    <p>The ternary operator <code>?:</code> is a shorthand way to write simple if-else statements.</p>
+
+    <h4>Example: Ternary Operator</h4>
+    <pre><code>public class TernaryExample {
+    public static void main(String[] args) {
+        int number = 10;
+        String result = (number % 2 == 0) ? "Even" : "Odd";
+        System.out.println("The number is " + result);
+    }
+}</code></pre>
+
+    <p>Conditional statements allow Java programs to make decisions dynamically. In the next lesson, we'll explore loops!</p>
+</section>
+
+        <section id="while-loops" class="lesson">
+    <h2>Using While Loops in Java</h2>
+
+    <p>Loops allow Java programs to execute a block of code multiple times. The <code>while</code> loop continues executing as long as a specified condition remains true.</p>
+
+    <h3>The While Loop</h3>
+    <p>The <code>while</code> loop repeatedly executes a block of code while a given condition evaluates to true.</p>
+
+    <h4>Syntax of a While Loop</h4>
+    <pre><code>while (condition) {
+    // Code to execute
+}</code></pre>
+
+    <h4>Example: Basic While Loop</h4>
+    <pre><code>public class WhileLoopExample {
+    public static void main(String[] args) {
+        int count = 1;
+
+        while (count <= 5) {
+            System.out.println("Count: " + count);
+            count++; // Increment count
+        }
+    }
+}</code></pre>
+    
+    <h3>Using While Loops with User Input</h3>
+    <p>While loops are commonly used when we don't know in advance how many times the loop should run.</p>
+
+    <h4>Example: Reading Input Until User Enters a Specific Value</h4>
+    <pre><code>import java.util.Scanner;
+
+public class WhileUserInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = "";
+
+        while (!input.equalsIgnoreCase("exit")) {
+            System.out.print("Enter a word (type 'exit' to stop): ");
+            input = scanner.nextLine();
+            System.out.println("You entered: " + input);
+        }
+
+        scanner.close();
+    }
+}</code></pre>
+
+    <h3>The Do-While Loop</h3>
+    <p>The <code>do-while</code> loop is similar to <code>while</code>, but it ensures the code inside the loop executes at least once before checking the condition.</p>
+
+    <h4>Example: Do-While Loop</h4>
+    <pre><code>public class DoWhileExample {
+    public static void main(String[] args) {
+        int number = 1;
+
+        do {
+            System.out.println("Number: " + number);
+            number++;
+        } while (number <= 5);
+    }
+}</code></pre>
+
+    <h3>Breaking Out of a While Loop</h3>
+    <p>The <code>break</code> statement can be used to exit a loop immediately.</p>
+
+    <h4>Example: Using Break in a While Loop</h4>
+    <pre><code>public class BreakExample {
+    public static void main(String[] args) {
+        int count = 1;
+
+        while (count <= 10) {
+            if (count == 5) {
+                System.out.println("Stopping at count = " + count);
+                break;
+            }
+            System.out.println("Count: " + count);
+            count++;
+        }
+    }
+}</code></pre>
+
+    <h3>Skipping an Iteration with Continue</h3>
+    <p>The <code>continue</code> statement skips the rest of the current iteration and moves to the next one.</p>
+
+    <h4>Example: Skipping Even Numbers</h4>
+    <pre><code>public class ContinueExample {
+    public static void main(String[] args) {
+        int number = 0;
+
+        while (number < 10) {
+            number++;
+            if (number % 2 == 0) {
+                continue; // Skip even numbers
+            }
+            System.out.println("Odd number: " + number);
+        }
+    }
+}</code></pre>
+
+    <p>While loops are useful for situations where we don’t know the exact number of iterations beforehand. In the next lesson, we'll explore <strong>for loops</strong>!</p>
+</section>
+
+        <section id="for-loops" class="lesson">
+    <h2>Using For Loops in Java</h2>
+
+    <p>The <code>for</code> loop in Java is used when the number of iterations is known beforehand. It provides a compact structure for looping.</p>
+
+    <h3>The Basic For Loop</h3>
+    <p>A <code>for</code> loop consists of three parts: initialization, condition, and increment/decrement.</p>
+
+    <h4>Syntax of a For Loop</h4>
+    <pre><code>for (initialization; condition; update) {
+    // Code to execute
+}</code></pre>
+
+    <h4>Example: Counting from 1 to 5</h4>
+    <pre><code>public class ForLoopExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Iteration: " + i);
+        }
+    }
+}</code></pre>
+
+    <h3>Using a For Loop to Iterate Over an Array</h3>
+    <p>For loops are commonly used to process arrays and collections.</p>
+
+    <h4>Example: Iterating Through an Array</h4>
+    <pre><code>public class ArrayIteration {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println("Element at index " + i + ": " + numbers[i]);
+        }
+    }
+}</code></pre>
+
+    <h3>The Enhanced For Loop (For-Each Loop)</h3>
+    <p>The enhanced <code>for</code> loop, also known as a for-each loop, is used to iterate over arrays and collections without using an index.</p>
+
+    <h4>Example: Using a For-Each Loop</h4>
+    <pre><code>public class ForEachExample {
+    public static void main(String[] args) {
+        String[] fruits = {"Apple", "Banana", "Cherry"};
+
+        for (String fruit : fruits) {
+            System.out.println("Fruit: " + fruit);
+        }
+    }
+}</code></pre>
+
+    <h3>Nesting For Loops</h3>
+    <p>A <code>for</code> loop can be placed inside another for loop to handle multi-dimensional structures like tables.</p>
+
+    <h4>Example: Nested For Loop to Print a Multiplication Table</h4>
+    <pre><code>public class NestedForLoop {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                System.out.print(i * j + " ");
+            }
+            System.out.println();
+        }
+    }
+}</code></pre>
+
+    <h3>Using Break in a For Loop</h3>
+    <p>The <code>break</code> statement stops the loop immediately when a certain condition is met.</p>
+
+    <h4>Example: Stopping at a Certain Value</h4>
+    <pre><code>public class BreakExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            if (i == 5) {
+                System.out.println("Stopping at " + i);
+                break;
+            }
+            System.out.println("Iteration: " + i);
+        }
+    }
+}</code></pre>
+
+    <h3>Using Continue in a For Loop</h3>
+    <p>The <code>continue</code> statement skips the current iteration and moves to the next one.</p>
+
+    <h4>Example: Skipping Even Numbers</h4>
+    <pre><code>public class ContinueExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            if (i % 2 == 0) {
+                continue; // Skip even numbers
+            }
+            System.out.println("Odd number: " + i);
+        }
+    }
+}</code></pre>
+
+    <p>The <code>for</code> loop is one of the most useful looping structures in Java. In the next lesson, we'll explore <strong>functions and methods</strong>!</p>
+</section>
+
+        <section id="arrays" class="lesson">
+    <h2>Understanding Arrays in Java</h2>
+
+    <p>An array in Java is a collection of elements of the same data type. It allows storing multiple values in a single variable instead of declaring separate variables for each value.</p>
+
+    <h3>Declaring and Initializing Arrays</h3>
+    <p>Arrays can be declared using square brackets <code>[]</code> and initialized with values.</p>
+
+    <h4>Syntax of an Array</h4>
+    <pre><code>dataType[] arrayName = new dataType[size];</code></pre>
+
+    <h4>Example: Declaring and Initializing an Array</h4>
+    <pre><code>public class ArrayExample {
+    public static void main(String[] args) {
+        // Declaring and initializing an array
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        // Accessing elements
+        System.out.println("First element: " + numbers[0]);
+        System.out.println("Second element: " + numbers[1]);
+    }
+}</code></pre>
+
+    <h3>Accessing Array Elements</h3>
+    <p>Each element in an array has an index, starting from 0.</p>
+
+    <h4>Example: Accessing and Modifying Elements</h4>
+    <pre><code>public class AccessArray {
+    public static void main(String[] args) {
+        int[] numbers = {5, 10, 15, 20};
+
+        // Accessing elements
+        System.out.println("Original value at index 2: " + numbers[2]);
+
+        // Modifying an element
+        numbers[2] = 50;
+        System.out.println("Updated value at index 2: " + numbers[2]);
+    }
+}</code></pre>
+
+    <h3>Looping Through an Array</h3>
+    <p>Arrays are commonly processed using loops.</p>
+
+    <h4>Example: Iterating Using a For Loop</h4>
+    <pre><code>public class LoopArray {
+    public static void main(String[] args) {
+        String[] fruits = {"Apple", "Banana", "Cherry"};
+
+        for (int i = 0; i < fruits.length; i++) {
+            System.out.println("Fruit at index " + i + ": " + fruits[i]);
+        }
+    }
+}</code></pre>
+
+    <h3>Using the Enhanced For Loop (For-Each)</h3>
+    <p>The for-each loop simplifies array iteration.</p>
+
+    <h4>Example: Using a For-Each Loop</h4>
+    <pre><code>public class ForEachExample {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+
+        for (int num : numbers) {
+            System.out.println("Number: " + num);
+        }
+    }
+}</code></pre>
+
+    <h3>Multi-Dimensional Arrays</h3>
+    <p>Java supports arrays with multiple dimensions (arrays within arrays).</p>
+
+    <h4>Example: Declaring a 2D Array</h4>
+    <pre><code>public class MultiDimArray {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Accessing elements
+        System.out.println("Element at row 1, column 2: " + matrix[1][2]);
+    }
+}</code></pre>
+
+    <h3>Finding the Length of an Array</h3>
+    <p>The <code>.length</code> property returns the number of elements in an array.</p>
+
+    <h4>Example: Finding Array Length</h4>
+    <pre><code>public class ArrayLength {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40};
+
+        System.out.println("Array size: " + numbers.length);
+    }
+}</code></pre>
+
+    <p>Arrays provide an efficient way to store and manage multiple values. In the next lesson, we'll explore <strong>ArrayLists</strong>, which allow dynamic resizing!</p>
+</section>
+
+        <section id="methods" class="lesson">
+            <h2>Understanding Methods in Java</h2>
+        
+            <p>A method in Java is a reusable block of code that performs a specific task. Methods help organize code, improve readability, and avoid repetition.</p>
+        
+            <h3>Declaring a Method</h3>
+            <p>A method is defined with a name, a return type, and optional parameters.</p>
+        
+            <h4>Syntax of a Method</h4>
+            <pre><code>returnType methodName(parameters) {
+            // Code to execute
+        }</code></pre>
+        
+            <h4>Example: Creating and Calling a Method</h4>
+            <pre><code>public class MethodExample {
+            // Method definition
+            public static void greet() {
+                System.out.println("Hello, welcome to Java!");
+            }
+        
+            public static void main(String[] args) {
+                // Calling the method
+                greet();
+            }
+        }</code></pre>
+        
+            <h3>Methods with Parameters</h3>
+            <p>Methods can accept parameters to process data.</p>
+        
+            <h4>Example: Method with Parameters</h4>
+            <pre><code>public class MethodWithParams {
+            public static void greet(String name) {
+                System.out.println("Hello, " + name + "!");
+            }
+        
+            public static void main(String[] args) {
+                greet("Alice");
+                greet("Bob");
+            }
+        }</code></pre>
+        
+            <h3>Methods with Return Values</h3>
+            <p>A method can return a value using the <code>return</code> keyword.</p>
+        
+            <h4>Example: Method That Returns a Value</h4>
+            <pre><code>public class ReturnExample {
+            public static int add(int a, int b) {
+                return a + b;
+            }
+        
+            public static void main(String[] args) {
+                int sum = add(5, 10);
+                System.out.println("Sum: " + sum);
+            }
+        }</code></pre>
+        
+            <h3>Method Overloading</h3>
+            <p>Java allows multiple methods with the same name but different parameters.</p>
+        
+            <h4>Example: Overloaded Methods</h4>
+            <pre><code>public class MethodOverloading {
+            public static int add(int a, int b) {
+                return a + b;
+            }
+        
+            public static double add(double a, double b) {
+                return a + b;
+            }
+        
+            public static void main(String[] args) {
+                System.out.println("Integer sum: " + add(5, 10));
+                System.out.println("Double sum: " + add(5.5, 2.3));
+            }
+        }</code></pre>
+        
+            <h3>Using Recursion</h3>
+            <p>A method can call itself, a technique known as recursion.</p>
+        
+            <h4>Example: Factorial Using Recursion</h4>
+            <pre><code>public class RecursionExample {
+            public static int factorial(int n) {
+                if (n == 1) {
+                    return 1;
+                }
+                return n * factorial(n - 1);
+            }
+        
+            public static void main(String[] args) {
+                System.out.println("Factorial of 5: " + factorial(5));
+            }
+        }</code></pre>
+        
+            <p>Methods help keep code modular and efficient. In the next lesson, we'll explore <strong>Object-Oriented Programming (OOP) concepts</strong> in Java!</p>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: support@learnhub.dev</p>
+          <p>Phone: +1 (123) 456-7890</p>
+        </div>
+        
+        <!-- Center Title -->
+        <div class="footer-title">
+          <h2><span class="blue">Learning</span><span class="orange">Hub</span></h2>
+          <p>Your gateway to programming mastery</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Explore More</h4>
+          <ul>
+            <li><a href="https://www.freecodecamp.org" target="_blank">FreeCodeCamp</a></li>
+            <li><a href="https://www.codecademy.com" target="_blank">Codecademy</a></li>
+            <li><a href="https://www.udemy.com" target="_blank">Udemy</a></li>
+            <li><a href="https://www.coursera.org" target="_blank">Coursera</a></li>
+          </ul>
+        </div>
+        
+        
+      </div>
+      <p class="copyright">© 2025 LearnHub. All rights reserved.</p>
+    </footer>
+    <script defer src="script.js"></script>
+
+</body>
+</html>

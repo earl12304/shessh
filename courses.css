@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #FFFFFF;
+    color: #333333;
+    overflow-x: hidden;
+    padding-top: 70px; /* Prevents content from being hidden under the fixed header */
+}
+
+/* Fixed Navigation Bar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #000000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+header h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+header .blue {
+  color: #007BFF;
+}
+
+header .orange {
+  color: #FFA500;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1E90FF;
+}
+
+/* Navigation Menu */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, .active {
+    color: #FFC107;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+/* Course Section */
+.page-intro {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f5f7fa;
+  border-bottom: 2px solid #ddd;
+}
+
+.page-intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #007BFF;
+}
+
+.page-intro p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.course-container {
+    padding: 80px 20px 50px; /* Added more top padding to avoid overlap */
+    text-align: center;
+}
+
+
+/* Course Grid */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.course-grid a {
+  text-decoration: none;
+}
+
+/* Course Cards */
+.course-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.course-card h3 {
+    font-size: 22px;
+    color: #1E90FF;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .hamburger div {
+        width: 35px;
+        height: 4px;
+        background: #1E90FF;
+        margin: 6px 0;
+        transition: 0.4s;
+        border-radius: 5px;
+    }
+
+    /* Full-screen menu overlay */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: opacity 0.4s ease, transform 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul li a {
+        color: #FFFFFF;
+        font-size: 24px;
+        font-weight: 600;
+        padding: 15px;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #1E90FF;
+    }
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+.footer-title {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+.footer-title h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.footer-title .blue {
+  color: #007BFF;
+}
+
+.footer-title .orange {
+  color: #FFA500;
+}
+
+.footer-title p {
+  color: white;
+  margin-top: 8px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.footer-section p {
+  margin: 5px 0;
+  color: white;
+}
+
+
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  color: white;
+}
+
+.explore-section {
+  text-align: center;
+}
+
+.footer-section h4 {
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  text-decoration: none;
+  color: #f39c12;
+}
+
+
+footer p {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
+}

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics - Learning Hub</title>
+    <link rel="stylesheet" href="jav.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+<h2><span class="blue">Learning</span><span class="orange">Hub</span></h2>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="course.html" class="active">Courses</a></li>
+                <li><a href="resources.html ">Resources</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">☰</div>
+        </nav>
+    </header>
+    
+          <div class="back-button">
+        <a href="course.html"><i class="fas fa-arrow-left"></i> Back</a>
+      </div>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search lessons..." onkeyup="searchLessons()">
+    </div>
+ 
+    <!-- Lesson Sections -->
+    <main id="lessons">
+        <section id="welcome-to-javascript" class="lesson">
+          <h2>Welcome to JavaScript</h2>
+    
+          <p>JavaScript is a programming language used to make web pages interactive. It allows you to create dynamic content, handle user interactions, and modify HTML and CSS.</p>
+          <h3>How to Use JavaScript</h3>
+          <p>You can add JavaScript to a web page in three ways:</p>
+          <h4>1. Inline JavaScript</h4>
+          <p>JavaScript can be written directly inside an HTML element.</p>
+          <pre><code>&lt;button onclick="alert('Hello!')">Click Me&lt;/button></code></pre>
+          <h4>2. Internal JavaScript</h4>
+          <p>JavaScript can be written inside a <code>&lt;script></code> tag.</p>
+          <pre><code>&lt;script>console.log("Welcome to JavaScript!") &lt;/script></code></pre>
+
+          <h4>3. External JavaScript</h4>
+          <p>JavaScript can be placed in a separate file and linked to an HTML document.</p>
+          <pre><code>&lt;script src="script.js">&lt;/script></code></pre>
+        </section>
+
+        <section id="javascript-code" class="lesson">
+          <h2>JavaScript Code</h2>
+          <p>JavaScript is executed by the browser and can interact with HTML and CSS. It allows you to create dynamic content, handle events, and modify webpage elements.</p>
+          <h3>Running JavaScript</h3>
+          <p>JavaScript code can run directly in the browser. One common way to see it in action is using the <code>alert()</code> function:</p>
+          <pre><code>alert("This is JavaScript in action!");</code></pre>
+          <h3>JavaScript in the Console</h3>
+          <p>The browser’s console is a great place to test JavaScript code. You can open it by pressing <code>F12</code> (or <code>Ctrl + Shift + I</code>) and navigating to the Console tab.</p>
+          <pre><code>console.log("Hello from JavaScript!");</code></pre>
+          <h3>Modifying Web Pages</h3>
+          <p>JavaScript can change the content of an HTML page dynamically.</p>
+          <pre><code>document.body.innerHTML = "&lt;h1>JavaScript Changed This!&lt;/h1>";</code></pre>
+          <h3>Responding to User Actions</h3>
+          <p>JavaScript can run code when a user interacts with the page, like clicking a button.</p>
+          <pre><code>function sayHello() {alert("Hello, User!");}document.getElementById("myButton").onclick = sayHello;</code></pre>
+          <p>Example button:</p>
+          <pre><code>&lt;button id="myButton">Click Me&lt;/button></code></pre>
+      </section>
+
+        <section id="data-and-variables" class="lesson">
+          <h2>Data and Variables</h2>
+          <p>In JavaScript, variables are used to store data values that can be referenced and manipulated later. Variables make it easy to store information and use it throughout a program.</p>
+          <h3>Declaring Variables</h3>
+          <p>There are three ways to declare variables in JavaScript:</p>
+          <pre><code>var age = 25;  // Older way (not recommended)
+let name = "John";  // Modern and flexible 
+const PI = 3.14;  // Constant value (cannot be changed)</code></pre>
+          <h3>Using Variables</h3>
+          <p>Once a variable is declared, you can use it in your program.</p>
+          <pre><code>let city = "New York"; 
+console.log("I live in " + city); // Output: I live in New York</code></pre>
+          <h3>Data Types in JavaScript</h3>
+          <p>JavaScript variables can store different types of data:</p>
+          <ul>
+              <li><strong>String</strong> - Text values (e.g., <code>"Hello"</code>)</li>
+              <li><strong>Number</strong> - Numeric values (e.g., <code>42</code>)</li>
+              <li><strong>Boolean</strong> - True or false values (<code>true</code> or <code>false</code>)</li>
+              <li><strong>Array</strong> - A list of values (e.g., <code>["Apple", "Banana", "Cherry"]</code>)</li>
+              <li><strong>Object</strong> - A collection of key-value pairs</li>
+          </ul>
+          <h3>Example of Different Data Types</h3>
+          <pre><code>let message = "Hello, World!"; // String
+let score = 100; // Number
+let isLoggedIn = true; // Boolean
+let fruits = ["Apple", "Banana", "Cherry"]; // Array
+let person = { name: "Alice", age: 30 }; // Object</code></pre>
+          <h3>Updating Variables</h3>
+          <p>Variables declared with <code>let</code> can be updated, but <code>const</code> variables cannot be changed.</p>
+          <pre><code>let color = "blue";
+color = "red"; // This works
+
+const birthYear = 2000;
+birthYear = 1999; // Error: Assignment to constant variable</code></pre>
+      </section>
+      
+        <section id="working-with-variables" class="lesson">
+          <h2>Working with Variables</h2>
+          <p>Variables in JavaScript store values that can change as the program runs. This makes them useful for storing user input, tracking data, and performing calculations.</p>
+          <h3>Updating Variables</h3>
+          <p>Variables declared with <code>let</code> can be reassigned new values.</p>
+          <pre><code>let age = 25; 
+age = 30; 
+console.log(age); // Output: 30</code></pre>
+          <h3>Using Variables in Operations</h3>
+          <p>Variables can be used in mathematical operations and combined with text.</p>
+          <pre><code>let price = 50;
+let tax = 5;
+let total = price + tax;
+console.log("Total price: $" + total); // Output: Total price: $55</code></pre>
+          <h3>Concatenating Strings</h3>
+          <p>Strings (text values) can be combined using the <code>+</code> operator or template literals.</p>
+          <pre><code>let firstName = "John";
+let lastName = "Doe";
+let fullName = firstName + " " + lastName;
+console.log("Hello, " + fullName + "!"); 
+
+// Using template literals (recommended)
+console.log(`Hello, ${fullName}!`);</code></pre>
+
+    <h3>Incrementing and Decrementing</h3>
+    <p>JavaScript allows you to increase or decrease a variable’s value easily.</p>
+    <pre><code>let count = 10;
+count++; // Adds 1
+console.log(count); // Output: 11
+
+count--; // Subtracts 1
+console.log(count); // Output: 10</code></pre>
+
+    <h3>Using <code>const</code> for Constants</h3>
+    <p>If you don’t want a variable to change, use <code>const</code> instead of <code>let</code>.</p>
+    <pre><code>const birthYear = 2000;
+birthYear = 1999; // Error: Assignment to constant variable</code></pre>
+</section>
+
+        <section id="document-object-model" class="lesson">
+    <h2>The Document Object Model (DOM)</h2>
+
+    <p>The Document Object Model (DOM) allows JavaScript to interact with and modify HTML elements. It represents the structure of a webpage as a tree of objects that JavaScript can access and change dynamically.</p>
+
+    <h3>Selecting Elements</h3>
+    <p>You can select and modify elements using JavaScript.</p>
+    <pre><code>// Change the text of an element with id="demo"
+document.getElementById("demo").innerHTML = "Hello, DOM!";</code></pre>
+
+    <p>Example HTML element:</p>
+    <pre><code>&lt;p id="demo">This text will change.&lt;/p></code></pre>
+
+    <h3>Changing Styles with JavaScript</h3>
+    <p>JavaScript can also modify CSS styles dynamically.</p>
+    <pre><code>document.getElementById("demo").style.color = "red";</code></pre>
+
+    <h3>Handling Events</h3>
+    <p>JavaScript can respond to user interactions, like button clicks.</p>
+    <pre><code>function changeText() {
+    document.getElementById("message").innerHTML = "You clicked the button!";
+}
+
+document.getElementById("btn").onclick = changeText;</code></pre>
+
+    <p>Example HTML:</p>
+    <pre><code>&lt;p id="message">Click the button to change this text.&lt;/p>
+&lt;button id="btn">Click Me&lt;/button></code></pre>
+
+    <h3>Creating and Adding Elements</h3>
+    <p>JavaScript can create new elements and add them to the page.</p>
+    <pre><code>let newElement = document.createElement("p");
+newElement.innerHTML = "This is a new paragraph!";
+document.body.appendChild(newElement);</code></pre>
+
+</section>
+
+        
+        <section id="javascript-functions" class="lesson">
+    <h2>JavaScript Functions</h2>
+
+    <p>A function is a reusable block of code designed to perform a specific task. Functions help in organizing code, improving readability, and reducing repetition.</p>
+
+    <h3>Declaring a Function</h3>
+    <p>Functions are defined using the <code>function</code> keyword:</p>
+    <pre><code>function greet(name) {
+    return "Hello, " + name + "!";
+}
+console.log(greet("Alice")); // Output: Hello, Alice!</code></pre>
+
+    <h3>Calling a Function</h3>
+    <p>To execute a function, you call it by using its name followed by parentheses.</p>
+    <pre><code>let message = greet("Bob");
+console.log(message); // Output: Hello, Bob!</code></pre>
+
+    <h3>Functions with Multiple Parameters</h3>
+    <p>Functions can take multiple inputs (parameters) and return a result.</p>
+    <pre><code>function add(a, b) {
+    return a + b;
+}
+console.log(add(5, 3)); // Output: 8</code></pre>
+
+    <h3>Function Without Parameters</h3>
+    <p>A function doesn’t always need parameters. It can perform an action without taking any input.</p>
+    <pre><code>function sayHello() {
+    console.log("Hello, World!");
+}
+sayHello(); // Output: Hello, World!</code></pre>
+
+    <h3>Arrow Functions (Shorter Syntax)</h3>
+    <p>JavaScript provides a shorter way to write functions using arrow syntax:</p>
+    <pre><code>const multiply = (x, y) => x * y;
+console.log(multiply(4, 5)); // Output: 20</code></pre>
+
+    <h3>Anonymous Functions</h3>
+    <p>Functions can be created without names and assigned to variables.</p>
+    <pre><code>let divide = function(a, b) {
+    return a / b;
+};
+console.log(divide(10, 2)); // Output: 5</code></pre>
+
+    <h3>Functions and the DOM</h3>
+    <p>Functions can also interact with the web page.</p>
+    <pre><code>function changeText() {
+    document.getElementById("message").innerHTML = "Text changed!";
+}
+document.getElementById("btn").onclick = changeText;</code></pre>
+
+    <p>Example HTML:</p>
+    <pre><code>&lt;p id="message">Click the button to change this text.&lt;/p>
+&lt;button id="btn">Click Me&lt;/button></code></pre>
+</section>
+
+        <section id="user-input" class="lesson">
+            <h2>User Input</h2>
+        
+            <p>JavaScript can take user input using different methods, such as <code>prompt()</code>, <code>confirm()</code>, and input fields from the webpage.</p>
+        
+            <h3>Using the <code>prompt()</code> Function</h3>
+            <p>The <code>prompt()</code> function allows users to enter a value in a popup box.</p>
+            <pre><code>let userName = prompt("Enter your name:");
+        console.log("Welcome, " + userName + "!");</code></pre>
+        
+            <h3>Using <code>confirm()</code> for Yes/No Choices</h3>
+            <p>The <code>confirm()</code> function asks the user a question with "OK" (true) or "Cancel" (false) as responses.</p>
+            <pre><code>let isConfirmed = confirm("Do you like JavaScript?");
+        if (isConfirmed) {
+            console.log("Great! Let's learn more.");
+        } else {
+            console.log("No worries! Maybe you'll like it later.");
+        }</code></pre>
+        
+            <h3>Getting User Input from an HTML Form</h3>
+            <p>JavaScript can collect input from form fields and display results on the page.</p>
+            <pre><code>function showMessage() {
+            let name = document.getElementById("nameInput").value;
+            document.getElementById("output").innerHTML = "Hello, " + name + "!";
+        }</code></pre>
+        
+            <p>Example HTML:</p>
+            <pre><code>&lt;input type="text" id="nameInput" placeholder="Enter your name">
+        &lt;button onclick="showMessage()">Submit&lt;/button>
+        &lt;p id="output">&lt;/p></code></pre>
+</section>
+
+        <section id="number-string-operations" class="lesson">
+              <h2>Number and String Operations</h2>
+          
+              <p>JavaScript can perform various mathematical calculations and manipulate text (strings) efficiently.</p>
+          
+              <h3>Number Operations</h3>
+              <p>JavaScript supports basic arithmetic operations:</p>
+              <pre><code>let num1 = 10, num2 = 5;
+          console.log(num1 + num2); // Addition: 15
+          console.log(num1 - num2); // Subtraction: 5
+          console.log(num1 * num2); // Multiplication: 50
+          console.log(num1 / num2); // Division: 2
+          console.log(num1 % num2); // Modulus (remainder): 0</code></pre>
+          
+              <h3>Increment and Decrement</h3>
+              <p>Numbers can be increased or decreased easily using <code>++</code> and <code>--</code>.</p>
+              <pre><code>let count = 5;
+          count++; // Increments by 1
+          console.log(count); // Output: 6
+          
+          count--; // Decrements by 1
+          console.log(count); // Output: 5</code></pre>
+          
+              <h3>String Operations</h3>
+              <p>Strings (text) can be combined using the <code>+</code> operator.</p>
+              <pre><code>let text = "Hello" + " World!";
+          console.log(text); // Output: Hello World!</code></pre>
+          
+              <h3>Using Template Literals</h3>
+              <p>Template literals (<code>`</code> backticks) make it easier to insert variables into strings.</p>
+              <pre><code>let name = "Alice";
+          let greeting = `Hello, ${name}!`;
+          console.log(greeting); // Output: Hello, Alice!</code></pre>
+          
+              <h3>Finding String Length</h3>
+              <p>The <code>.length</code> property returns the number of characters in a string.</p>
+              <pre><code>let word = "JavaScript";
+          console.log(word.length); // Output: 10</code></pre>
+          
+              <h3>Changing Case</h3>
+              <p>JavaScript allows you to convert strings to uppercase or lowercase.</p>
+              <pre><code>let phrase = "JavaScript is fun!";
+          console.log(phrase.toUpperCase()); // Output: JAVASCRIPT IS FUN!
+          console.log(phrase.toLowerCase()); // Output: javascript is fun!</code></pre>
+          
+              <h3>Extracting Parts of a String</h3>
+              <p>You can extract specific parts of a string using <code>slice()</code> and <code>substring()</code>.</p>
+              <pre><code>let sentence = "Hello, JavaScript!";
+          console.log(sentence.slice(7, 17)); // Output: JavaScript
+          console.log(sentence.substring(7, 17)); // Output: JavaScript</code></pre>
+          
+          </section>
+          
+        <section id="comparison-operators" class="lesson">
+    <h2>Comparison Operators</h2>
+
+    <p>Comparison operators are used to compare values and return a boolean result: <code>true</code> (if the condition is met) or <code>false</code> (if it's not).</p>
+
+    <h3>Basic Comparison Operators</h3>
+    <p>These operators compare two values:</p>
+    <pre><code>console.log(10 > 5);  // Greater than: true
+console.log(10 < 5);  // Less than: false
+console.log(10 >= 10); // Greater than or equal to: true
+console.log(5 <= 8);  // Less than or equal to: true</code></pre>
+
+    <h3>Equality Operators</h3>
+    <p>These check if two values are equal or not.</p>
+    <pre><code>console.log(10 == "10");  // Loose equality (checks value): true
+console.log(10 === "10"); // Strict equality (checks value and type): false
+console.log(10 != "10");  // Loose inequality: false
+console.log(10 !== "10"); // Strict inequality: true</code></pre>
+
+    <h3>Strict vs. Loose Comparison</h3>
+    <p>The difference between <code>==</code> and <code>===</code> is that <code>==</code> compares only values, while <code>===</code> checks both values and data types.</p>
+    <pre><code>console.log(5 == "5");  // true (loose equality, converts string to number)
+console.log(5 === "5"); // false (strict equality, different types)</code></pre>
+
+    <h3>Using Comparison Operators in Conditions</h3>
+    <p>Comparison operators are often used in conditional statements.</p>
+    <pre><code>let age = 18;
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}</code></pre>
+
+    <h3>Comparing Strings</h3>
+    <p>Strings are compared alphabetically based on Unicode values.</p>
+    <pre><code>console.log("apple" > "banana"); // false ('a' comes before 'b')
+console.log("hello" === "hello"); // true (exact match)</code></pre>
+
+
+
+</section>
+
+
+        <section id="logical-operators" class="lesson">
+    <h2>Logical Operators</h2>
+
+    <p>Logical operators are used to combine multiple conditions and return a boolean result: <code>true</code> or <code>false</code>.</p>
+
+    <h3>1. AND Operator (<code>&&</code>)</h3>
+    <p>The <code>&&</code> (AND) operator returns <code>true</code> only if both conditions are <code>true</code>.</p>
+    <pre><code>console.log(true && true);   // Output: true
+console.log(true && false);  // Output: false
+console.log(10 > 5 && 8 < 12); // Output: true</code></pre>
+
+    <h3>2. OR Operator (<code>||</code>)</h3>
+    <p>The <code>||</code> (OR) operator returns <code>true</code> if at least one of the conditions is <code>true</code>.</p>
+    <pre><code>console.log(true || false);  // Output: true
+console.log(false || false); // Output: false
+console.log(10 > 15 || 8 < 12); // Output: true</code></pre>
+
+    <h3>3. NOT Operator (<code>!</code>)</h3>
+    <p>The <code>!</code> (NOT) operator reverses a boolean value.</p>
+    <pre><code>console.log(!true);  // Output: false
+console.log(!false); // Output: true
+console.log(!(10 > 5)); // Output: false</code></pre>
+
+    <h3>4. Using Logical Operators in Conditions</h3>
+    <p>Logical operators are commonly used in conditional statements.</p>
+    <pre><code>let age = 20;
+let hasLicense = true;
+
+if (age >= 18 && hasLicense) {
+    console.log("You can drive.");
+} else {
+    console.log("You cannot drive.");
+}</code></pre>
+
+    <h3>5. Combining Multiple Conditions</h3>
+    <p>Logical operators can be combined for complex conditions.</p>
+    <pre><code>let isSunny = true;
+let isWeekend = true;
+
+if (isSunny || isWeekend) {
+    console.log("Let's go outside!");
+} else {
+    console.log("Stay indoors.");
+}</code></pre>
+
+    <h3>6. Short-Circuit Evaluation</h3>
+    <p>JavaScript stops evaluating conditions as soon as the result is determined.</p>
+    <pre><code>console.log(true || someUndefinedFunction()); // Output: true (second part is never executed)
+console.log(false && someUndefinedFunction()); // Output: false (second part is never executed)</code></pre>
+
+</section>
+
+
+        <section id="conditional-statements" class="lesson">
+    <h2>Conditional Statements</h2>
+
+    <p>Conditional statements allow JavaScript to make decisions based on conditions. The main conditional statements are:</p>
+
+    <h3>1. <code>if</code> Statement</h3>
+    <p>The <code>if</code> statement executes a block of code only if the condition is <code>true</code>.</p>
+    <pre><code>let temperature = 25;
+if (temperature > 20) {
+    console.log("It's a warm day.");
+}</code></pre>
+
+    <h3>2. <code>if...else</code> Statement</h3>
+    <p>The <code>if...else</code> statement provides an alternative action if the condition is <code>false</code>.</p>
+    <pre><code>let isRaining = true;
+if (isRaining) {
+    console.log("Take an umbrella.");
+} else {
+    console.log("Enjoy the sunshine!");
+}</code></pre>
+
+    <h3>3. <code>if...else if...else</code> Statement</h3>
+    <p>The <code>else if</code> statement allows multiple conditions to be checked in order.</p>
+    <pre><code>let score = 85;
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else {
+    console.log("Grade: D or F");
+}</code></pre>
+
+    <h3>4. Nested <code>if</code> Statements</h3>
+    <p>An <code>if</code> statement can be placed inside another <code>if</code> statement.</p>
+    <pre><code>let age = 18;
+let hasID = true;
+
+if (age >= 18) {
+    if (hasID) {
+        console.log("You can enter.");
+    } else {
+        console.log("You need an ID.");
+    }
+} else {
+    console.log("You must be 18 or older.");
+}</code></pre>
+
+    <h3>5. Using Logical Operators in Conditions</h3>
+    <p>Logical operators can be used within <code>if</code> statements to check multiple conditions.</p>
+    <pre><code>let time = 10;
+let isWeekend = true;
+
+if (time < 12 && isWeekend) {
+    console.log("Good morning! Enjoy your weekend.");
+} else {
+    console.log("Good day!");
+}</code></pre>
+
+    <h3>6. Ternary Operator</h3>
+    <p>The ternary operator (<code>condition ? trueValue : falseValue</code>) is a shorthand for simple <code>if...else</code> statements.</p>
+    <pre><code>let age = 18;
+let message = (age >= 18) ? "You are an adult." : "You are a minor.";
+console.log(message);</code></pre>
+
+</section>
+
+        <section id="while-loops" class="lesson">
+    <h2>While Loops</h2>
+
+    <p>A <code>while</code> loop executes a block of code repeatedly as long as a specified condition remains <code>true</code>. This is useful when we don’t know in advance how many times the loop should run.</p>
+
+    <h3>1. Basic <code>while</code> Loop</h3>
+    <p>The loop will keep running as long as the condition is <code>true</code>.</p>
+    <pre><code>let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++; // Incrementing i to avoid an infinite loop
+}</code></pre>
+
+    <h3>2. Using <code>while</code> for User Input</h3>
+    <p>Loops are often used to repeatedly ask for user input until a valid value is given.</p>
+    <pre><code>let userInput;
+while (!userInput) {
+    userInput = prompt("Enter your name:");
+}
+console.log("Hello, " + userInput + "!");</code></pre>
+
+    <h3>3. Avoiding Infinite Loops</h3>
+    <p>Make sure the condition eventually becomes <code>false</code>, or the loop will run forever.</p>
+    <pre><code>// This loop runs forever because the condition never changes
+while (true) {
+    console.log("This is an infinite loop!");
+}</code></pre>
+
+    <h3>4. Using <code>break</code> to Exit a <code>while</code> Loop</h3>
+    <p>The <code>break</code> statement can be used to exit a loop when a condition is met.</p>
+    <pre><code>let number = 0;
+while (number < 10) {
+    console.log(number);
+    if (number === 5) {
+        break; // Stops the loop when number is 5
+    }
+    number++;
+}</code></pre>
+
+    <h3>5. Using <code>continue</code> to Skip Iterations</h3>
+    <p>The <code>continue</code> statement skips the current iteration and moves to the next.</p>
+    <pre><code>let x = 0;
+while (x < 10) {
+    x++;
+    if (x % 2 === 0) {
+        continue; // Skips even numbers
+    }
+    console.log(x);
+}</code></pre>
+
+    <h3>6. <code>do...while</code> Loop</h3>
+    <p>The <code>do...while</code> loop ensures the code runs at least once, even if the condition is false.</p>
+    <pre><code>let count = 5;
+do {
+    console.log("Count:", count);
+    count++;
+} while (count < 5); // Runs once even though condition is false</code></pre>
+
+</section>
+
+        <section id="for-loops" class="lesson">
+    <h2>For Loops</h2>
+
+    <p>A <code>for</code> loop is used when the number of iterations is known. It consists of three parts:</p>
+    <pre><code>for (initialization; condition; increment/decrement) {
+    // Code to execute in each iteration
+}</code></pre>
+
+    <h3>1. Basic <code>for</code> Loop</h3>
+    <p>This loop runs 5 times, printing numbers from 0 to 4.</p>
+    <pre><code>for (let i = 0; i < 5; i++) {
+    console.log(i);
+}</code></pre>
+
+    <h3>2. Looping Through an Array</h3>
+    <p>A <code>for</code> loop is useful for iterating through arrays.</p>
+    <pre><code>let colors = ["Red", "Green", "Blue"];
+for (let i = 0; i < colors.length; i++) {
+    console.log(colors[i]);
+}</code></pre>
+
+    <h3>3. Using <code>break</code> to Exit a Loop</h3>
+    <p>The <code>break</code> statement stops the loop when a condition is met.</p>
+    <pre><code>for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break; // Stops the loop when i is 5
+    }
+    console.log(i);
+}</code></pre>
+
+    <h3>4. Using <code>continue</code> to Skip Iterations</h3>
+    <p>The <code>continue</code> statement skips the current iteration and moves to the next.</p>
+    <pre><code>for (let i = 0; i < 10; i++) {
+    if (i % 2 === 0) {
+        continue; // Skips even numbers
+    }
+    console.log(i);
+}</code></pre>
+
+    <h3>5. Nested <code>for</code> Loops</h3>
+    <p>A <code>for</code> loop can be nested inside another loop to create a grid-like pattern.</p>
+    <pre><code>for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= 3; j++) {
+        console.log(`i: ${i}, j: ${j}`);
+    }
+}</code></pre>
+
+    <h3>6. Looping Backward</h3>
+    <p>A <code>for</code> loop can count down instead of up.</p>
+    <pre><code>for (let i = 5; i >= 0; i--) {
+    console.log(i);
+}</code></pre>
+
+    <h3>7. Using <code>for...of</code> for Arrays</h3>
+    <p>The <code>for...of</code> loop simplifies iterating over arrays.</p>
+    <pre><code>let fruits = ["Apple", "Banana", "Cherry"];
+for (let fruit of fruits) {
+    console.log(fruit);
+}</code></pre>
+
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: support@learnhub.dev</p>
+          <p>Phone: +1 (123) 456-7890</p>
+        </div>
+        
+        <!-- Center Title -->
+        <div class="footer-title">
+          <h2><span class="blue">Learning</span><span class="orange">Hub</span></h2>
+          <p>Your gateway to programming mastery</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Explore More</h4>
+          <ul>
+            <li><a href="https://www.freecodecamp.org" target="_blank">FreeCodeCamp</a></li>
+            <li><a href="https://www.codecademy.com" target="_blank">Codecademy</a></li>
+            <li><a href="https://www.udemy.com" target="_blank">Udemy</a></li>
+            <li><a href="https://www.coursera.org" target="_blank">Coursera</a></li>
+          </ul>
+        </div>
+        
+        
+      </div>
+      <p class="copyright">© 2025 LearnHub. All rights reserved.</p>
+    </footer>
+    <script defer src="script.js"></script>
+
+</body>
+</html>

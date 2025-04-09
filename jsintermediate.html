@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Intermediate - Learning Hub</title>
+    <link rel="stylesheet" href="jav.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+<h2><span class="blue">Learning</span><span class="orange">Hub</span></h2>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="course.html" class="active">Courses</a></li>
+                <li><a href="resources.html ">Resources</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">☰</div>
+        </nav>
+    </header>
+          <div class="back-button">
+      <a href="course.html"><i class="fas fa-arrow-left"></i> Back</a>
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search lessons..." onkeyup="searchLessons()">
+    </div>
+ 
+    <!-- Lesson Sections -->
+    <main id="lessons">
+        <section id="js-and-html-review" class="lesson">
+    <h2>JS and HTML Review</h2>
+
+    <p>Before diving into intermediate JavaScript, let's review how JavaScript interacts with HTML. JavaScript is used to make web pages interactive by manipulating HTML elements and responding to user actions.</p>
+
+    <h3>Adding JavaScript to HTML</h3>
+    <p>JavaScript can be added to an HTML document in three ways:</p>
+
+    <h4>1. Inline JavaScript</h4>
+    <p>You can add JavaScript directly inside an HTML element using the <code>onclick</code> attribute.</p>
+    <pre><code>&lt;button onclick="alert('Hello, World!')">Click Me&lt;/button></code></pre>
+
+    <h4>2. Internal JavaScript</h4>
+    <p>JavaScript can be written inside a <code>&lt;script></code> tag in an HTML file.</p>
+    <pre><code>&lt;script>
+    document.write("Welcome to JavaScript!");
+    &lt;/script></code></pre>
+
+    <h4>3. External JavaScript</h4>
+    <p>JavaScript can be placed in a separate file and linked to the HTML file using the <code>script</code> tag.</p>
+    <pre><code>&lt;script src="script.js">&lt;/script></code></pre>
+
+    <h3>Manipulating HTML Elements with JavaScript</h3>
+    <p>JavaScript can access and modify HTML elements using the <code>document</code> object.</p>
+
+    <h4>Changing Text Content</h4>
+    <p>You can change the text inside an HTML element using <code>document.getElementById()</code>.</p>
+    <pre><code>&lt;p id="demo">Original Text&lt;/p>
+    &lt;script>
+    document.getElementById("demo").innerText = "Text Changed!";
+    &lt;/script></code></pre>
+
+    <h4>Handling User Events</h4>
+    <p>JavaScript can respond to user actions like clicks.</p>
+    <pre><code>&lt;button id="myButton">Click Me&lt;/button>
+    &lt;script>
+    document.getElementById("myButton").addEventListener("click", function() {
+        alert("Button Clicked!");
+    });
+    &lt;/script></code></pre>
+
+    <p>Understanding how JavaScript interacts with HTML is key to writing dynamic web applications. Now, let's move on to more advanced JavaScript concepts!</p>
+</section>
+        
+        <section id="document-object-model" class="lesson">
+    <h2>The Document Object Model (DOM)</h2>
+
+    <p>The Document Object Model (DOM) is a programming interface that allows JavaScript to interact with and modify HTML and CSS dynamically. It represents the structure of a web page as a tree of objects.</p>
+
+    <h3>Understanding the DOM Structure</h3>
+    <p>When a web page loads, the browser creates a DOM tree representing the HTML document.</p>
+    <pre><code>
+    Document
+    ├── html
+        ├── head
+        ├── body
+            ├── h1
+            ├── p
+            ├── button
+    </code></pre>
+
+    <h3>Accessing Elements in the DOM</h3>
+    <p>JavaScript provides several methods to select and manipulate elements in the DOM.</p>
+
+    <h4>1. Selecting Elements</h4>
+    <p>There are different ways to access HTML elements using JavaScript.</p>
+
+    <h5>Using <code>getElementById()</code></h5>
+    <p>This method selects an element by its <code>id</code>.</p>
+    <pre><code>&lt;p id="demo">Hello World!&lt;/p>
+    &lt;script>
+    let element = document.getElementById("demo");
+    console.log(element.innerText); // Outputs: Hello World!
+    &lt;/script></code></pre>
+
+    <h5>Using <code>getElementsByClassName()</code></h5>
+    <p>This method selects elements by their class name.</p>
+    <pre><code>&lt;p class="text">Paragraph 1&lt;/p>
+    &lt;p class="text">Paragraph 2&lt;/p>
+    &lt;script>
+    let elements = document.getElementsByClassName("text");
+    console.log(elements[0].innerText); // Outputs: Paragraph 1
+    &lt;/script></code></pre>
+
+    <h5>Using <code>querySelector()</code> and <code>querySelectorAll()</code></h5>
+    <p>These methods allow selecting elements using CSS selectors.</p>
+    <pre><code>&lt;p class="text">Hello&lt;/p>
+    &lt;script>
+    let element = document.querySelector(".text");
+    console.log(element.innerText); // Outputs: Hello
+    &lt;/script></code></pre>
+
+    <h3>Modifying Elements</h3>
+    <p>Once an element is selected, we can modify its content, attributes, or styles.</p>
+
+    <h4>1. Changing Text Content</h4>
+    <p>Use <code>innerText</code> or <code>innerHTML</code> to change an element’s content.</p>
+    <pre><code>&lt;p id="demo">Original Text&lt;/p>
+    &lt;script>
+    document.getElementById("demo").innerText = "New Text!";
+    &lt;/script></code></pre>
+
+    <h4>2. Changing Attributes</h4>
+    <p>Use <code>setAttribute()</code> to modify an element's attributes.</p>
+    <pre><code>&lt;img id="myImage" src="old.jpg" alt="Old Image">
+    &lt;script>
+    document.getElementById("myImage").setAttribute("src", "new.jpg");
+    &lt;/script></code></pre>
+
+    <h4>3. Changing Styles</h4>
+    <p>Use <code>style</code> property to modify CSS properties.</p>
+    <pre><code>&lt;p id="demo">Hello&lt;/p>
+    &lt;script>
+    document.getElementById("demo").style.color = "red";
+    &lt;/script></code></pre>
+
+    <h3>Adding and Removing Elements</h3>
+    <p>JavaScript can also add or remove elements dynamically.</p>
+
+    <h4>Adding Elements</h4>
+    <pre><code>&lt;div id="container">&lt;/div>
+    &lt;script>
+    let newElement = document.createElement("p");
+    newElement.innerText = "New Paragraph";
+    document.getElementById("container").appendChild(newElement);
+    &lt;/script></code></pre>
+
+    <h4>Removing Elements</h4>
+    <pre><code>&lt;p id="demo">This will be removed&lt;/p>
+    &lt;script>
+    let element = document.getElementById("demo");
+    element.remove();
+    &lt;/script></code></pre>
+
+    <p>The DOM is a powerful tool that allows JavaScript to create dynamic and interactive web pages. Mastering the DOM is essential for building modern web applications.</p>
+</section>
+
+        <section id="events-and-objects" class="lesson">
+    <h2>Events and Objects</h2>
+
+    <p>JavaScript is an event-driven language, meaning it responds to user interactions like clicks, keypresses, and form submissions. These interactions are handled using JavaScript events. Additionally, JavaScript objects allow us to store and organize data efficiently.</p>
+
+    <h3>JavaScript Events</h3>
+    <p>Events occur when a user interacts with a webpage. JavaScript can listen for these events and execute code in response.</p>
+
+    <h4>1. Handling Events</h4>
+    
+    <h5>Using the <code>onclick</code> Attribute</h5>
+    <p>One way to handle events is by adding an event directly in HTML.</p>
+    <pre><code>&lt;button onclick="showMessage()">Click Me&lt;/button>
+    &lt;script>
+    function showMessage() {
+        alert("Button Clicked!");
+    }
+    &lt;/script></code></pre>
+
+    <h5>Using <code>addEventListener()</code></h5>
+    <p>A better way to handle events is by using JavaScript’s <code>addEventListener()</code> method.</p>
+    <pre><code>&lt;button id="myButton">Click Me&lt;/button>
+    &lt;script>
+    document.getElementById("myButton").addEventListener("click", function() {
+        alert("Button Clicked!");
+    });
+    &lt;/script></code></pre>
+
+    <h4>2. Common JavaScript Events</h4>
+    <ul>
+        <li><code>click</code> – When an element is clicked.</li>
+        <li><code>mouseover</code> – When the mouse hovers over an element.</li>
+        <li><code>mouseout</code> – When the mouse leaves an element.</li>
+        <li><code>keydown</code> – When a key is pressed.</li>
+        <li><code>keyup</code> – When a key is released.</li>
+        <li><code>submit</code> – When a form is submitted.</li>
+    </ul>
+
+    <h3>JavaScript Objects</h3>
+    <p>Objects are used to store data in key-value pairs. They allow us to group related information together.</p>
+
+    <h4>1. Creating an Object</h4>
+    <pre><code>&lt;script>
+    let person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 30,
+        greet: function() {
+            return "Hello, " + this.firstName + "!";
+        }
+    };
+    console.log(person.greet()); // Outputs: Hello, John!
+    &lt;/script></code></pre>
+
+    <h4>2. Accessing Object Properties</h4>
+    <p>Properties can be accessed using dot notation or bracket notation.</p>
+    <pre><code>&lt;script>
+    console.log(person.firstName); // Outputs: John
+    console.log(person["lastName"]); // Outputs: Doe
+    &lt;/script></code></pre>
+
+    <h4>3. Adding and Modifying Properties</h4>
+    <p>New properties can be added to objects dynamically.</p>
+    <pre><code>&lt;script>
+    person.job = "Developer";
+    person.age = 31;
+    console.log(person.job); // Outputs: Developer
+    &lt;/script></code></pre>
+
+    <h4>4. Object Methods</h4>
+    <p>Methods are functions inside objects that perform actions.</p>
+    <pre><code>&lt;script>
+    let car = {
+        brand: "Toyota",
+        model: "Camry",
+        start: function() {
+            return this.brand + " " + this.model + " is starting...";
+        }
+    };
+    console.log(car.start()); // Outputs: Toyota Camry is starting...
+    &lt;/script></code></pre>
+
+    <h3>Events and Objects Together</h3>
+    <p>JavaScript objects and events often work together to create interactive applications.</p>
+    <pre><code>&lt;button id="showInfo">Show Info&lt;/button>
+    &lt;p id="info"></p>
+    &lt;script>
+    let user = {
+        name: "Alice",
+        age: 25,
+        getInfo: function() {
+            return "Name: " + this.name + ", Age: " + this.age;
+        }
+    };
+
+    document.getElementById("showInfo").addEventListener("click", function() {
+        document.getElementById("info").innerText = user.getInfo();
+    });
+    &lt;/script></code></pre>
+
+    <p>Understanding events and objects is crucial for building interactive applications. Events allow us to respond to user actions, while objects help us structure and manage data efficiently.</p>
+</section>
+
+        <section id="timer" class="lesson">
+    <h2>JavaScript Timer</h2>
+
+    <p>JavaScript provides built-in timer functions that allow you to execute code after a delay or repeatedly at a set interval. These functions are useful for animations, countdowns, or scheduling tasks.</p>
+
+    <h3>setTimeout()</h3>
+    <p>The <code>setTimeout()</code> function executes a function after a specified delay (in milliseconds).</p>
+    
+    <h4>Example: Delayed Message</h4>
+    <pre><code>&lt;script>
+    setTimeout(function() {
+        console.log("This message appears after 3 seconds");
+    }, 3000);
+    &lt;/script></code></pre>
+
+    <p>In this example, the message will appear in the console after 3 seconds.</p>
+
+    <h3>setInterval()</h3>
+    <p>The <code>setInterval()</code> function repeatedly executes a function at a specified interval.</p>
+    
+    <h4>Example: Updating Time Every Second</h4>
+    <pre><code>&lt;p id="clock">Time: 0 seconds&lt;/p>
+    &lt;script>
+    let seconds = 0;
+    setInterval(function() {
+        seconds++;
+        document.getElementById("clock").innerText = "Time: " + seconds + " seconds";
+    }, 1000);
+    &lt;/script></code></pre>
+
+    <p>In this example, the page updates the time every second.</p>
+
+    <h3>clearTimeout() and clearInterval()</h3>
+    <p>You can cancel a timer using <code>clearTimeout()</code> or <code>clearInterval()</code>.</p>
+
+    <h4>Example: Stopping an Interval</h4>
+    <pre><code>&lt;p id="counter">Count: 0&lt;/p>
+    &lt;button id="stopButton">Stop</button>
+    &lt;script>
+    let count = 0;
+    let counter = setInterval(function() {
+        count++;
+        document.getElementById("counter").innerText = "Count: " + count;
+    }, 1000);
+
+    document.getElementById("stopButton").addEventListener("click", function() {
+        clearInterval(counter);
+    });
+    &lt;/script></code></pre>
+
+    <p>Clicking the "Stop" button will stop the counter.</p>
+
+    <h3>Practical Use: Countdown Timer</h3>
+    <p>Let's create a countdown timer that counts down from 10 to 0.</p>
+    
+    <pre><code>&lt;p id="countdown">10&lt;/p>
+    &lt;script>
+    let timeLeft = 10;
+    let timer = setInterval(function() {
+        document.getElementById("countdown").innerText = timeLeft;
+        timeLeft--;
+
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            document.getElementById("countdown").innerText = "Time's up!";
+        }
+    }, 1000);
+    &lt;/script></code></pre>
+
+    <p>This script counts down from 10 and stops when it reaches 0.</p>
+
+    <p>Timers are essential for animations, user notifications, and scheduling tasks in JavaScript. Mastering them will help you create more interactive and dynamic web applications.</p>
+</section>
+
+        <section id="arrays" class="lesson">
+    <h2>JavaScript Arrays</h2>
+
+    <p>Arrays are used to store multiple values in a single variable. They allow us to manage lists of items efficiently.</p>
+
+    <h3>Creating an Array</h3>
+    <p>Arrays can be created using square brackets <code>[]</code> or the <code>Array</code> constructor.</p>
+
+    <h4>Example: Defining an Array</h4>
+    <pre><code>&lt;script>
+    let fruits = ["Apple", "Banana", "Cherry"];
+    console.log(fruits); // Outputs: ["Apple", "Banana", "Cherry"]
+    &lt;/script></code></pre>
+
+    <h3>Accessing Array Elements</h3>
+    <p>Each item in an array has an index, starting from 0.</p>
+
+    <h4>Example: Accessing Elements</h4>
+    <pre><code>&lt;script>
+    console.log(fruits[0]); // Outputs: Apple
+    console.log(fruits[1]); // Outputs: Banana
+    &lt;/script></code></pre>
+
+    <h3>Modifying Arrays</h3>
+    
+    <h4>1. Changing an Element</h4>
+    <pre><code>&lt;script>
+    fruits[1] = "Blueberry";
+    console.log(fruits); // Outputs: ["Apple", "Blueberry", "Cherry"]
+    &lt;/script></code></pre>
+
+    <h4>2. Adding Elements</h4>
+    <p>Use <code>push()</code> to add an item to the end of the array.</p>
+    <pre><code>&lt;script>
+    fruits.push("Mango");
+    console.log(fruits); // Outputs: ["Apple", "Blueberry", "Cherry", "Mango"]
+    &lt;/script></code></pre>
+
+    <p>Use <code>unshift()</code> to add an item to the beginning of the array.</p>
+    <pre><code>&lt;script>
+    fruits.unshift("Grapes");
+    console.log(fruits); // Outputs: ["Grapes", "Apple", "Blueberry", "Cherry", "Mango"]
+    &lt;/script></code></pre>
+
+    <h4>3. Removing Elements</h4>
+    <p>Use <code>pop()</code> to remove the last item.</p>
+    <pre><code>&lt;script>
+    fruits.pop();
+    console.log(fruits); // Outputs: ["Grapes", "Apple", "Blueberry", "Cherry"]
+    &lt;/script></code></pre>
+
+    <p>Use <code>shift()</code> to remove the first item.</p>
+    <pre><code>&lt;script>
+    fruits.shift();
+    console.log(fruits); // Outputs: ["Apple", "Blueberry", "Cherry"]
+    &lt;/script></code></pre>
+
+    <h3>Looping Through Arrays</h3>
+    <p>Use a loop to iterate through array elements.</p>
+
+    <h4>Example: Using <code>forEach()</code></h4>
+    <pre><code>&lt;script>
+    fruits.forEach(function(fruit) {
+        console.log(fruit);
+    });
+    // Outputs:
+    // Apple
+    // Blueberry
+    // Cherry
+    &lt;/script></code></pre>
+
+    <h4>Example: Using a <code>for</code> Loop</h4>
+    <pre><code>&lt;script>
+    for (let i = 0; i < fruits.length; i++) {
+        console.log(fruits[i]);
+    }
+    &lt;/script></code></pre>
+
+    <h3>Array Methods</h3>
+    <p>JavaScript provides several built-in methods to manipulate arrays.</p>
+
+    <h4>1. <code>map()</code></h4>
+    <p>Creates a new array by transforming each element.</p>
+    <pre><code>&lt;script>
+    let numbers = [1, 2, 3, 4];
+    let squared = numbers.map(num => num * num);
+    console.log(squared); // Outputs: [1, 4, 9, 16]
+    &lt;/script></code></pre>
+
+    <h4>2. <code>filter()</code></h4>
+    <p>Creates a new array with elements that meet a condition.</p>
+    <pre><code>&lt;script>
+    let evenNumbers = numbers.filter(num => num % 2 === 0);
+    console.log(evenNumbers); // Outputs: [2, 4]
+    &lt;/script></code></pre>
+
+    <h4>3. <code>reduce()</code></h4>
+    <p>Reduces an array to a single value.</p>
+    <pre><code>&lt;script>
+    let sum = numbers.reduce((total, num) => total + num, 0);
+    console.log(sum); // Outputs: 10
+    &lt;/script></code></pre>
+
+    <h3>Practical Use: To-Do List</h3>
+    <p>Let's create a simple to-do list using arrays.</p>
+
+    <pre><code>&lt;input type="text" id="taskInput" placeholder="Enter a task">
+    &lt;button onclick="addTask()">Add Task</button>
+    &lt;ul id="taskList">&lt;/ul>
+
+    &lt;script>
+    let tasks = [];
+
+    function addTask() {
+        let taskInput = document.getElementById("taskInput");
+        let task = taskInput.value;
+        if (task) {
+            tasks.push(task);
+            taskInput.value = "";
+            displayTasks();
+        }
+    }
+
+    function displayTasks() {
+        let taskList = document.getElementById("taskList");
+        taskList.innerHTML = "";
+        tasks.forEach((task, index) => {
+            taskList.innerHTML += "&lt;li>" + task + " &lt;button onclick='removeTask(" + index + ")'>Remove&lt;/button>&lt;/li>";
+        });
+    }
+
+    function removeTask(index) {
+        tasks.splice(index, 1);
+        displayTasks();
+    }
+    &lt;/script></code></pre>
+
+    <p>Arrays are a powerful way to store and manage data in JavaScript. Understanding how to manipulate them efficiently will help in building dynamic web applications.</p>
+</section>
+
+        <section id="indexing-and-traversing" class="lesson">
+    <h2>Indexing and Traversing Arrays</h2>
+
+    <p>Arrays in JavaScript store multiple values, and each value is assigned an index. Indexing allows us to access, modify, and remove elements, while traversing helps us go through all elements efficiently.</p>
+
+    <h3>Array Indexing</h3>
+    <p>Each element in an array is assigned an index, starting from <code>0</code>.</p>
+
+    <h4>Example: Accessing Elements by Index</h4>
+    <pre><code>&lt;script>
+    let colors = ["Red", "Green", "Blue", "Yellow"];
+    console.log(colors[0]); // Outputs: Red
+    console.log(colors[2]); // Outputs: Blue
+    &lt;/script></code></pre>
+
+    <h4>Example: Modifying an Element</h4>
+    <pre><code>&lt;script>
+    colors[1] = "Purple"; 
+    console.log(colors); // Outputs: ["Red", "Purple", "Blue", "Yellow"]
+    &lt;/script></code></pre>
+
+    <h4>Example: Finding the Last Element</h4>
+    <pre><code>&lt;script>
+    console.log(colors[colors.length - 1]); // Outputs: Yellow
+    &lt;/script></code></pre>
+
+    <h3>Traversing an Array</h3>
+    <p>Traversing means looping through all the elements of an array to process or display them.</p>
+
+    <h4>1. Using a <code>for</code> Loop</h4>
+    <pre><code>&lt;script>
+    for (let i = 0; i < colors.length; i++) {
+        console.log("Color at index " + i + ": " + colors[i]);
+    }
+    &lt;/script></code></pre>
+
+    <h4>2. Using <code>forEach()</code> Method</h4>
+    <p>The <code>forEach()</code> method is a simpler way to traverse an array.</p>
+    <pre><code>&lt;script>
+    colors.forEach(function(color, index) {
+        console.log("Index " + index + ": " + color);
+    });
+    &lt;/script></code></pre>
+
+    <h4>3. Using <code>map()</code> to Transform an Array</h4>
+    <p>The <code>map()</code> method creates a new array by applying a function to each element.</p>
+    <pre><code>&lt;script>
+    let uppercaseColors = colors.map(color => color.toUpperCase());
+    console.log(uppercaseColors); // Outputs: ["RED", "PURPLE", "BLUE", "YELLOW"]
+    &lt;/script></code></pre>
+
+    <h4>4. Using <code>filter()</code> to Find Elements</h4>
+    <p>Filters elements based on a condition.</p>
+    <pre><code>&lt;script>
+    let shortColors = colors.filter(color => color.length <= 4);
+    console.log(shortColors); // Outputs: ["Red", "Blue"]
+    &lt;/script></code></pre>
+
+    <h3>Practical Use: Displaying an Array in HTML</h3>
+    <p>Let's create a simple list to display an array dynamically.</p>
+
+    <pre><code>&lt;ul id="colorList">&lt;/ul>
+    &lt;script>
+    function displayColors() {
+        let list = document.getElementById("colorList");
+        list.innerHTML = "";
+        colors.forEach(color => {
+            list.innerHTML += "&lt;li>" + color + "&lt;/li>";
+        });
+    }
+    displayColors();
+    &lt;/script></code></pre>
+
+    <p>Indexing and traversing arrays are fundamental skills in JavaScript, allowing efficient data handling and manipulation.</p>
+</section>
+
+        <section id="arrays-and-dom" class="lesson">
+    <h2>Arrays and the DOM</h2>
+
+    <p>JavaScript arrays can be used to dynamically update and manipulate elements in the Document Object Model (DOM). This allows us to display lists, modify content, and create interactive web applications.</p>
+
+    <h3>Displaying an Array in the DOM</h3>
+    <p>We can use a loop to display an array inside an HTML element like a list.</p>
+
+    <h4>Example: Rendering a List from an Array</h4>
+    <pre><code>&lt;ul id="fruitList">&lt;/ul>
+    &lt;script>
+    let fruits = ["Apple", "Banana", "Cherry", "Mango"];
+    
+    function displayFruits() {
+        let list = document.getElementById("fruitList");
+        list.innerHTML = ""; // Clear existing list
+        fruits.forEach(fruit => {
+            let li = document.createElement("li");
+            li.textContent = fruit;
+            list.appendChild(li);
+        });
+    }
+
+    displayFruits();
+    &lt;/script></code></pre>
+
+    <h3>Adding Elements to the DOM from an Array</h3>
+    <p>We can allow users to add new items to an array and update the DOM accordingly.</p>
+
+    <h4>Example: Adding a New Item</h4>
+    <pre><code>&lt;input type="text" id="fruitInput" placeholder="Enter a fruit">
+    &lt;button onclick="addFruit()">Add Fruit</button>
+    &lt;ul id="fruitList">&lt;/ul>
+
+    &lt;script>
+    function addFruit() {
+        let input = document.getElementById("fruitInput");
+        let fruit = input.value.trim();
+        if (fruit) {
+            fruits.push(fruit);
+            input.value = "";
+            displayFruits();
+        }
+    }
+    &lt;/script></code></pre>
+
+    <h3>Removing Elements from the DOM</h3>
+    <p>We can allow users to remove items dynamically.</p>
+
+    <h4>Example: Removing an Item</h4>
+    <pre><code>&lt;ul id="fruitList">&lt;/ul>
+
+    &lt;script>
+    function displayFruits() {
+        let list = document.getElementById("fruitList");
+        list.innerHTML = ""; 
+        fruits.forEach((fruit, index) => {
+            let li = document.createElement("li");
+            li.textContent = fruit;
+            let btn = document.createElement("button");
+            btn.textContent = "Remove";
+            btn.onclick = () => removeFruit(index);
+            li.appendChild(btn);
+            list.appendChild(li);
+        });
+    }
+
+    function removeFruit(index) {
+        fruits.splice(index, 1);
+        displayFruits();
+    }
+
+    displayFruits();
+    &lt;/script></code></pre>
+
+    <h3>Updating DOM Elements Using Arrays</h3>
+    <p>Arrays can help us dynamically update text and attributes in the DOM.</p>
+
+    <h4>Example: Cycling Through Colors</h4>
+    <pre><code>&lt;div id="colorBox" style="width: 100px; height: 100px; background-color: red;">&lt;/div>
+    &lt;button onclick="changeColor()">Change Color</button>
+
+    &lt;script>
+    let colors = ["red", "blue", "green", "yellow"];
+    let index = 0;
+
+    function changeColor() {
+        index = (index + 1) % colors.length;
+        document.getElementById("colorBox").style.backgroundColor = colors[index];
+    }
+    &lt;/script></code></pre>
+
+    <p>By combining arrays with the DOM, we can create interactive and dynamic web experiences.</p>
+</section>
+
+        <section id="animating-elements" class="lesson">
+    <h2>Animating Elements with JavaScript</h2>
+
+    <p>JavaScript allows you to create animations by changing the properties of an element over time. You can animate elements using the <code>setInterval()</code>, <code>setTimeout()</code>, or CSS animations controlled by JavaScript.</p>
+
+    <h3>Basic Animation with setInterval()</h3>
+    <p>We can move an element across the screen by gradually changing its position.</p>
+
+    <h4>Example: Moving a Box</h4>
+    <pre><code>&lt;div id="box" style="width: 50px; height: 50px; background: red; position: absolute; top: 50px; left: 0;">&lt;/div>
+    &lt;button onclick="moveBox()">Move</button>
+
+    &lt;script>
+    function moveBox() {
+        let box = document.getElementById("box");
+        let position = 0;
+        let interval = setInterval(() => {
+            if (position >= 300) {
+                clearInterval(interval);
+            } else {
+                position += 5;
+                box.style.left = position + "px";
+            }
+        }, 50);
+    }
+    &lt;/script></code></pre>
+
+    <h3>Animating with requestAnimationFrame()</h3>
+    <p>The <code>requestAnimationFrame()</code> method provides a smoother animation compared to <code>setInterval()</code>.</p>
+
+    <h4>Example: Smooth Animation</h4>
+    <pre><code>&lt;div id="circle" style="width: 50px; height: 50px; background: blue; border-radius: 50%; position: absolute; top: 100px; left: 0;">&lt;/div>
+    &lt;button onclick="animateCircle()">Start Animation</button>
+
+    &lt;script>
+    function animateCircle() {
+        let circle = document.getElementById("circle");
+        let position = 0;
+
+        function step() {
+            if (position < 300) {
+                position += 5;
+                circle.style.left = position + "px";
+                requestAnimationFrame(step);
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+    &lt;/script></code></pre>
+
+    <h3>Fading Effects with JavaScript</h3>
+    <p>We can animate the opacity of an element to create a fade effect.</p>
+
+    <h4>Example: Fade Out</h4>
+    <pre><code>&lt;div id="fadeBox" style="width: 100px; height: 100px; background: green;">&lt;/div>
+    &lt;button onclick="fadeOut()">Fade Out</button>
+
+    &lt;script>
+    function fadeOut() {
+        let box = document.getElementById("fadeBox");
+        let opacity = 1;
+
+        let interval = setInterval(() => {
+            if (opacity <= 0) {
+                clearInterval(interval);
+                box.style.display = "none";
+            } else {
+                opacity -= 0.05;
+                box.style.opacity = opacity;
+            }
+        }, 50);
+    }
+    &lt;/script></code></pre>
+
+    <h3>Bouncing Animation</h3>
+    <p>Let's create a bouncing ball effect.</p>
+
+    <h4>Example: Bouncing Ball</h4>
+    <pre><code>&lt;div id="ball" style="width: 50px; height: 50px; background: orange; border-radius: 50%; position: absolute; top: 200px; left: 100px;">&lt;/div>
+    &lt;button onclick="bounceBall()">Bounce</button>
+
+    &lt;script>
+    function bounceBall() {
+        let ball = document.getElementById("ball");
+        let position = 0;
+        let speed = 5;
+        let direction = 1;
+
+        function step() {
+            if (position >= 200 || position <= 0) {
+                direction *= -1; // Change direction
+            }
+            position += speed * direction;
+            ball.style.top = (200 - position) + "px";
+            requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
+    }
+    &lt;/script></code></pre>
+
+    <p>Animations enhance user experience by making interfaces more dynamic and interactive. Mastering JavaScript animations allows you to create engaging web applications.</p>
+</section>
+
+        <section id="animating-events" class="lesson">
+    <h2>Animating Elements Based on Events</h2>
+
+    <p>JavaScript allows you to trigger animations when users interact with elements. You can animate elements in response to events like clicks, hovers, key presses, and more.</p>
+
+    <h3>Animating on Click</h3>
+    <p>Let's animate a box when a button is clicked.</p>
+
+    <h4>Example: Moving a Box on Click</h4>
+    <pre><code>&lt;div id="clickBox" style="width: 50px; height: 50px; background: red; position: absolute; top: 50px; left: 0;">&lt;/div>
+    &lt;button onclick="moveOnClick()">Move Box</button>
+
+    &lt;script>
+    function moveOnClick() {
+        let box = document.getElementById("clickBox");
+        let position = 0;
+        let interval = setInterval(() => {
+            if (position >= 300) {
+                clearInterval(interval);
+            } else {
+                position += 5;
+                box.style.left = position + "px";
+            }
+        }, 50);
+    }
+    &lt;/script></code></pre>
+
+    <h3>Animating on Hover</h3>
+    <p>We can animate an element when the user hovers over it.</p>
+
+    <h4>Example: Expanding a Box on Hover</h4>
+    <pre><code>&lt;div id="hoverBox" style="width: 100px; height: 100px; background: blue; transition: width 0.5s, height 0.5s;">
+    &lt;/div>
+
+    &lt;script>
+    let hoverBox = document.getElementById("hoverBox");
+
+    hoverBox.addEventListener("mouseover", function() {
+        hoverBox.style.width = "150px";
+        hoverBox.style.height = "150px";
+    });
+
+    hoverBox.addEventListener("mouseout", function() {
+        hoverBox.style.width = "100px";
+        hoverBox.style.height = "100px";
+    });
+    &lt;/script></code></pre>
+
+    <h3>Animating on Key Press</h3>
+    <p>We can move an element when the user presses the arrow keys.</p>
+
+    <h4>Example: Moving a Box with Arrow Keys</h4>
+    <pre><code>&lt;div id="keyBox" style="width: 50px; height: 50px; background: green; position: absolute; top: 100px; left: 100px;">
+    &lt;/div>
+
+    &lt;script>
+    let keyBox = document.getElementById("keyBox");
+    let x = 100;
+    let y = 100;
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowRight") x += 10;
+        if (event.key === "ArrowLeft") x -= 10;
+        if (event.key === "ArrowUp") y -= 10;
+        if (event.key === "ArrowDown") y += 10;
+
+        keyBox.style.left = x + "px";
+        keyBox.style.top = y + "px";
+    });
+    &lt;/script></code></pre>
+
+    <h3>Animating on Scroll</h3>
+    <p>We can trigger animations when the user scrolls down the page.</p>
+
+    <h4>Example: Fading in an Element on Scroll</h4>
+    <pre><code>&lt;div id="scrollBox" style="width: 100px; height: 100px; background: purple; opacity: 0; transition: opacity 1s;">
+    &lt;/div>
+
+    &lt;script>
+    window.addEventListener("scroll", function() {
+        let scrollBox = document.getElementById("scrollBox");
+        let position = scrollBox.getBoundingClientRect().top;
+        let screenHeight = window.innerHeight;
+
+        if (position < screenHeight) {
+            scrollBox.style.opacity = 1;
+        }
+    });
+    &lt;/script></code></pre>
+
+    <p>Animating elements in response to events creates a more interactive and engaging user experience. These techniques are commonly used in modern web development.</p>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: support@learnhub.dev</p>
+          <p>Phone: +1 (123) 456-7890</p>
+        </div>
+        
+        <!-- Center Title -->
+        <div class="footer-title">
+          <h2><span class="blue">Learning</span><span class="orange">Hub</span></h2>
+          <p>Your gateway to programming mastery</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Explore More</h4>
+          <ul>
+            <li><a href="https://www.freecodecamp.org" target="_blank">FreeCodeCamp</a></li>
+            <li><a href="https://www.codecademy.com" target="_blank">Codecademy</a></li>
+            <li><a href="https://www.udemy.com" target="_blank">Udemy</a></li>
+            <li><a href="https://www.coursera.org" target="_blank">Coursera</a></li>
+          </ul>
+        </div>
+        
+        
+      </div>
+      <p class="copyright">© 2025 LearnHub. All rights reserved.</p>
+    </footer>
+    <script defer src="script.js"></script>
+
+</body>
+</html>
